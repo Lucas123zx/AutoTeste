@@ -3,11 +3,11 @@
 import cadastro from'../pageobjects/registroPage'
 const cadastrar = new cadastro
 
-Given("usuário esteje na pagína do alurapPic" , () => {
+Given("usuário esteje na pagina do alurapPic" , () => {
     cadastrar.acessarSite();
 })
 
-And("acesse registre now" , () => {
+And("acesse registe now" , () => {
     cadastrar.registrarAgora();
 })
 
@@ -15,7 +15,9 @@ When("clicar em register" , () => {
     cadastrar.botaoRegistrar();
 })
 
-Then("deverá apresentar uma mensagem de erro" , () => {
+Then("deverá apresentar uma mensagem de email é obrigatório" , () => {
     cadastrar.mensagemEmail();
     cadastrar.mensagemDadosObrigatorios();
 })
+
+Given("usuário esteje na pagina do alurapPic")
