@@ -1,0 +1,1 @@
+### Automação de teste utilizando o Cypress no AluraPic.
