@@ -3,21 +3,28 @@
 import cadastro from'../pageobjects/registroPage'
 const cadastrar = new cadastro
 
-Given("usuário esteje na pagina do alurapPic" , () => {
-    cadastrar.acessarSite();
-})
-
-And("acesse registe now" , () => {
-    cadastrar.registrarAgora();
+Given("esteje na tela de singup" , () => {
+    cadastrar.acessarSiteSingup();
 })
 
 When("clicar em register" , () => {
     cadastrar.botaoRegistrar();
 })
 
-Then("deverá apresentar uma mensagem de email é obrigatório" , () => {
-    cadastrar.mensagemEmail();
+Then("deverá apresentar mensagem informando que campos são obrigatorios", () => {
     cadastrar.mensagemDadosObrigatorios();
 })
 
-Given("usuário esteje na pagina do alurapPic")
+
+Given("esteje na tela singnup" , () => {
+    cadastrar.acessarSiteSingup();
+})
+
+When("digitar um email inválido" , () => {
+    cadastrar.preencherCampos();
+})
+
+Then("deverá apresentar uma mensagem de email inválido" , () => {
+    cadastrar.botaoRegistrar();
+    cy.contains('ap-vmessage' , 'Invalid e-mail').should('be.visible')
+})

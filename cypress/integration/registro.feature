@@ -1,13 +1,13 @@
 Feature: Registro de usuário
 
-    Scenario:Mensagem de Email Obrigátorio
-    Given usuário esteje na pagina do alurapPic
-    And acesse registe now
-    When clicar em register
-    Then deverá apresentar uma mensagem de email é obrigatório
-
+#Descrition: Verificar a exibição de mensagems em campos obrigatório para registar no sistema
     Scenario:Mensagem de campos obrigatorios
-    Given usuário esteje na pagina do alurapPic
-    And acesso register now
+    Given esteje na tela de singup
     When clicar em register 
-    Then deverá apresenatr mensagem informando que campos são obrigatorios
+    Then deverá apresentar mensagem informando que campos são obrigatorios
+
+#Descrition: Verificar a exibição de mensagem ao preencher campo email fora do padrão 
+    Scenario:Mensagem de email inválido
+    Given esteje na tela de singup
+    When digitar um email inválido
+    Then deverá apresentar uma mensagem de email inválido
